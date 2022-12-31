@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                border: 5px double black;
+                padding: 50px;
+                background-color: rgb(241, 230, 241);
+            }
+            #display{
+                width:100%;
+                pointer-events:none;
+                border: 2px solid cornflowerblue;
+                width: 250px;
+                height:60px;
+                background-color: rgb(218, 236, 236);
+                font-size: large;
+            }
+            #zero{
+                width: 125px;
+
+            }
+            #clear{
+                width: 195px;
+            }
+            button{
+                padding: 10px;
+                width:62.5px;
+                height:60px;
+                border: .5px solid black;
+                font-size: medium;
+                border-radius:5px;
+    
+            }
+           
+        </style>
+
+    </head>
+    <body align="center">
+        <h1>Calculator</h1>
+        <table align="center">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="display">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button class="btn" type="button" id="clear" onclick="displayClear();">clear</button>
+                </td>
+                
+                <td>
+                    <button class="btn" type="button" onclick="btnclick('+');">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="btn" type="button" onclick="btnclick(7);">7</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(8);">8</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(9);">9</button></td>
+                <td><button class="btn" type="button" onclick="btnclick('/');">/</button></td>
+            </tr>
+            <tr>
+                <td> <button class="btn" type="button" onclick="btnclick(4);">4</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(5);">5</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(6);">6</button></td>
+                <td><button class="btn" type="button" onclick="btnclick('*');">*</button></td>
+                
+            </tr>
+            <tr>
+                <td><button class="btn" type="button" onclick="btnclick(3);">3</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(2);">2</button></td>
+                <td><button class="btn" type="button" onclick="btnclick(1);">1</button></td>
+                <td><button class="btn" type="button" onclick="btnclick('-');">-</button></td>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="btnz" type="button" id="zero" onclick="btnclick(0);">0</button></td>
+                <td><button class="btnz" type="button"  onclick="btnclick('.');">.</button></td>
+                <td><button class="btn" type="button"  onclick="eqClick('=');">=</button></td>
+
+            </tr>
+        </table>
+        <script>
+            function btnclick (val)
+            {
+                document.getElementById("display").value+=val;
+            }
+            function displayClear()
+            {
+                document.getElementById("display").value="";
+            }
+            function eqClick()
+            {
+                var text=document.getElementById("display").value ;
+                var result=eval(text);
+                document.getElementById("display").value=result;
+            }
+        </script>
+
+    </body>
+</html>
